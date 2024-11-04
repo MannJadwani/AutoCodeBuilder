@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 // Configure CORS
 const corsOptions = {
-  origin: 'https://vigilant-waddle-67wv7xqj7rq2496j-5173.app.github.dev',
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
   credentials: true,
@@ -79,5 +79,5 @@ app.post('/generate', async (req, res) => {
 
 const PORT = 5000;
 server.listen(PORT, () => {
-  console.log(`Server is running on https://vigilant-waddle-67wv7xqj7rq2496j-5000.app.github.dev`);
+  console.log(`Server is running on http://localhost:5000`);
 });

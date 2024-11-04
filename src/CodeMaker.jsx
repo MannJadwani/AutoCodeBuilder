@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import ProjectViewer from './ProjectViewer'
 
 // Connect to Socket.io server
-const socket = io('https://vigilant-waddle-67wv7xqj7rq2496j-5000.app.github.dev');
+const socket = io('http://localhost:5000');
 
 function CodeMaker() {
   const [command, setCommand] = useState('');

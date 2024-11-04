@@ -9,7 +9,7 @@ const openai= new OpenAI({apiKey:process.env.OPENAI_API_KEY})
 
 // Enable CORS
 app.use(cors({
-  origin: 'https://vigilant-waddle-67wv7xqj7rq2496j-5173.app.github.dev', // Replace with your frontend origin
+  origin: 'http://localhost:5173', 
 }));
 
 // Middleware to parse JSON bodies
@@ -19,13 +19,14 @@ app.use(express.json());
 app.post('/generate', async (req, res) => {
   // Example response data
   const responseText = req.body.prompt ? `Received prompt: ${req.body.prompt}` : 'No prompt provided';
+  console.log(responseText)
   const completion = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [
-        { role: "system", content: "You are a helpful assistant." },
+        { role: "system", content: "you are a coding assistance, you accept ideas from users and generate code for it" },
         {
             role: "user",
-            content: "Write a haiku about recursion in programming.",
+            content: `${req.body.prompt}`,
         },
     ],
 });

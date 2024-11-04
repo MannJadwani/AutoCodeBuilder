@@ -9,7 +9,7 @@ const GeneratedCodePage = () => {
   useEffect(() => {
     const generateCode = async () => {
       try {
-        const response = await fetch('https://vigilant-waddle-67wv7xqj7rq2496j-5000.app.github.dev/generate', {
+        const response = await fetch('http://localhost:5000/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const GeneratedCodePage = () => {
     };
 
     generateCode();
-  }, [prompt]);
+  }, []);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
